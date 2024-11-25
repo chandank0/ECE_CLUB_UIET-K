@@ -1,197 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECE Club - UIET Kanpur</title>
+    <title>ECE Club Events</title>
     <style>
-        /* General Reset */
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
-        /* Body Styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* Header */
+        /* Header Styling */
         header {
-            background: #222;
-            color: #fff;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
+            background-image: url('header-bg.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
             top: 0;
-            z-index: 1000;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Add a dark overlay */
         }
 
-        header .logo h1 {
-            font-size: 1.8rem;
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            position: relative;
+            z-index: 1;
         }
 
-        header nav ul {
-            list-style: none;
-            display: flex;
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
 
-        header nav ul li {
-            margin: 0 1rem;
-        }
-
-        header nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        header nav ul li a:hover {
-            color: #00bcd4;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(to right, #00bcd4, #2196f3);
-            color: #fff;
-            text-align: center;
-            padding: 4rem 2rem;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-        }
-
-        .hero p {
-            margin: 1rem 0;
-        }
-
-        .hero .btn {
-            background: #fff;
-            color: #00bcd4;
-            padding: 0.5rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .hero .btn:hover {
-            background: #00bcd4;
-            color: #fff;
-        }
-
-        /* Sections */
+        /* Section Styling */
         section {
-            padding: 3rem 2rem;
+            padding: 60px 20px;
             text-align: center;
         }
 
-        .event-grid,
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Event Grid */
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .event {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .event h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .event p {
+            margin: 10px 0;
+        }
+
+        /* Team Grid */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .team-member {
+            text-align: center;
         }
 
         .team-member img {
-            width: 100%;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
+            margin-bottom: 10px;
         }
 
-        /* Contact Section */
-        .contact form {
+        /* Contact Form */
+        form {
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 10px;
         }
 
-        .contact form input,
-        .contact form textarea,
-        .contact form button {
-            width: 80%;
-            margin: 0.5rem 0;
-            padding: 0.8rem;
-            border: none;
+        form input, form textarea, form button {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            border: 1px solid #ccc;
             border-radius: 5px;
         }
 
-        .contact form button {
-            background: #00bcd4;
-            color: #fff;
+        form button {
+            background: #007BFF;
+            color: white;
+            border: none;
             cursor: pointer;
             transition: background 0.3s;
         }
 
-        .contact form button:hover {
-            background: #2196f3;
+        form button:hover {
+            background: #0056b3;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 1rem;
-            background: #222;
-            color: #fff;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+            padding: 20px;
+            background: #333;
+            color: white;
         }
     </style>
 </head>
-
 <body>
     <header>
-        <div class="logo">
-            <h1>ECE Club</h1>
-            <p>UIET Kanpur | CSJM University</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>ECE Club</h1>
+        <p>Innovating the Future, Together</p>
     </header>
 
-    <section class="hero">
-        <h2>Welcome to the ECE Club</h2>
-        <p>Exploring Innovations, Shaping the Future</p>
-        <a href="#about" class="btn">Learn More</a>
-    </section>
-
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>
-            The ECE Club at UIET Kanpur is dedicated to fostering innovation and creativity in the field of Electronics
-            and Communication Engineering. Our mission is to empower students with the knowledge and skills to excel in
-            the ever-evolving tech world.
-        </p>
-    </section>
-
-    <section id="events" class="events">
+    <section id="events">
         <h2>Our Events</h2>
         <div class="event-grid">
             <div class="event">
-                <h3>Circuit simulation</h3>
-                <p>videos of circuit simulation</p>
-                 <a href="https://youtu.be/88GvDSQrkG4?si=mZuutsGGZuwCkLvB">watch videos</a>
+                <h3>Circuit Simulation</h3>
+                <p>Videos of circuit simulation</p>
+                <a href="https://youtu.be/88GvDSQrkG4?si=mZuutsGGZuwCkLvB" target="_blank">Watch Videos</a>
             </div>
             <div class="event">
                 <h3>Hackathon</h3>
@@ -219,8 +175,8 @@
             </div>
             <div class="team-member">
                 <img src="Screenshot 2024-11-25 112749.png" alt="Team Member">
-                <h3>Chandan katiyar</h3>
-                <p>second year</p>
+                <h3>Chandan Katiyar</h3>
+                <p>Second Year</p>
             </div>
         </div>
     </section>
@@ -238,18 +194,5 @@
     <footer>
         <p>Created by Chandan | ECE Club, UIET Kanpur, CSJM University</p>
     </footer>
-
-    <script>
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
-
 </html>
