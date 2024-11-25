@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECE Club - UIET Kanpur</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: #222;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo h1 {
+            font-size: 1.8rem;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin: 0 1rem;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #00bcd4;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, #00bcd4, #2196f3);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 2rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+        }
+
+        .hero p {
+            margin: 1rem 0;
+        }
+
+        .hero .btn {
+            background: #fff;
+            color: #00bcd4;
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .hero .btn:hover {
+            background: #00bcd4;
+            color: #fff;
+        }
+
+        /* Sections */
+        section {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .event-grid,
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        /* Contact Section */
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact form input,
+        .contact form textarea,
+        .contact form button {
+            width: 80%;
+            margin: 0.5rem 0;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact form button {
+            background: #00bcd4;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact form button:hover {
+            background: #2196f3;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #222;
+            color: #fff;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>ECE Club</h1>
+            <p>UIET Kanpur | CSJM University</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to the ECE Club</h2>
+        <p>Exploring Innovations, Shaping the Future</p>
+        <a href="#about" class="btn">Learn More</a>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>
+            The ECE Club at UIET Kanpur is dedicated to fostering innovation and creativity in the field of Electronics
+            and Communication Engineering. Our mission is to empower students with the knowledge and skills to excel in
+            the ever-evolving tech world.
+        </p>
+    </section>
+
+    <section id="events" class="events">
+        <h2>Our Events</h2>
+        <div class="event-grid">
+            <div class="event">
+                <h3>Tech Talk</h3>
+                <p>An insightful talk by industry experts.</p>
+            </div>
+            <div class="event">
+                <h3>Hackathon</h3>
+                <p>Innovate, Code, and Solve Real-World Problems.</p>
+            </div>
+            <div class="event">
+                <h3>Workshops</h3>
+                <p>Hands-on sessions on trending technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <h2>Meet the Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="team1.jpg" alt="Team Member">
+                <h3>John Doe</h3>
+                <p>President</p>
+            </div>
+            <div class="team-member">
+                <img src="team2.jpg" alt="Team Member">
+                <h3>Jane Smith</h3>
+                <p>Vice President</p>
+            </div>
+            <div class="team-member">
+                <img src="team3.jpg" alt="Team Member">
+                <h3>Alan Brown</h3>
+                <p>Secretary</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Created by Chandan | ECE Club, UIET Kanpur, CSJM University</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
